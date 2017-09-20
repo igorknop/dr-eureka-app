@@ -1,0 +1,45 @@
+html{
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+section{
+  min-height: 200px;
+}
+
+button{
+  width: 100%;
+}
+
+.hidden{
+  display: none;
+}
+div.p, div.o, div.g, div.e {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border-style: outset;
+  border-width: 1px;
+}
+div.p{
+  background-color: purple;
+}
+div.o{
+  background-color: orange;
+}
+div.g{
+  background-color: green;
+}
+
+div.tube{
+  display: inline-block;
+  padding: 2px;
+  margin: 5px;
+  border: 1px solid white;
+  border-top-color: transparent;
+}
+
+.time{
+  font-size: 3em;
+}

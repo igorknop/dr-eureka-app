@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dr. Eureka Tool</title>
     <link rel="stylesheet" href="dreureka.css"/>
     <script src="dreureka.js" charset="utf-8"></script>
@@ -14,17 +15,21 @@
       <button>Timed Game</button>
       <button>Cooperative Game</button>
     </section>
-    <section id="standard">
-      <div id="card"></div>
-      <div class="time"></div>
-    </section>
-    <section id="cooperative">
-      <div class="setup"><input id="players" value="2" max="4" min="0" type="num"/></div>
-      <div class="time"></div>
-      <div id="card"></div>
+
+    <section id="standard" class="hidden">
+      <div class="cardHolder"></div>
+      <div class="time hidden">120</div>
+      <button class="draw">Random</button>
+      <button class="back">Back</button>
     </section>
 
+    <section id="cooperative" class="hidden">
+      <div class="setup"><input id="players" value="2" max="4" min="1" type="number"/></div>
+      <div class="time">120</div>
+      <div class="cardHolder"></div>
+      <button class="back">Back</button>
     </section>
+
     </main>
   </body>
 </html>
