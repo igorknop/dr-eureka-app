@@ -17,7 +17,9 @@ function DrEureka() {
   this.buttonCooperative = buttons[2];
   this.buttonStandardRandom = buttons[3];
   this.buttonStandardBack = buttons[4];
-  this.buttonCooperativeBack = buttons[5];
+  this.buttonCooperativeRandom = buttons[5];
+  this.buttonCooperativeBack = buttons[6];
+  this.playerCount = document.querySelector("input");
   var timers = document.querySelectorAll(".time");
   this.standardTime = timers[0];
   this.cooperativeTime = timers[1];
@@ -60,6 +62,19 @@ function DrEureka() {
     that.sectionCooperative.classList.remove("hidden");
     that.cooperativeTime.classList.remove("hidden");
   });
+  this.buttonCooperativeRandom.addEventListener("click", function(){
+    that.resetCardCoop(1*(that.playerCount.value));
+    that.shuffle10();
+    that.cooperativeCard.innerHTML = "";
+    that.cooperativeCard.appendChild(that.drawCard());
+    clearInterval(that.timer);
+    that.seconds = 120;
+      that.cooperativeTime.innerHTML =that.getTimeRemaining();
+      that.timer = setInterval(function(){
+      that.seconds--;
+      that.cooperativeTime.innerHTML = that.getTimeRemaining();
+    },1000);
+  });
   this.buttonCooperativeBack.addEventListener("click", function(){
     that.sectionMain.classList.remove("hidden");
     that.sectionCooperative.classList.add("hidden");
@@ -69,6 +84,16 @@ function DrEureka() {
 DrEureka.prototype.resetCard = function () {
   this.card =[["p","p","","",""],["o","o","","",""],["g","g","","",""]];
 };
+
+DrEureka.prototype.resetCardCoop = function (n) {
+  this.card = []; [["p","p","","",""],["o","o","","",""],["g","g","","",""]];
+  for (var i = 0; i < n; i++) {
+    this.card.push(["p","p","","",""]);
+    this.card.push(["o","o","","",""]);
+    this.card.push(["g","g","","",""]);
+  }
+};
+
 DrEureka.prototype.moveBall = function (from, to) {
   if(from == to) return false;
   var f = -1;
@@ -100,8 +125,8 @@ DrEureka.prototype.moveBall = function (from, to) {
 DrEureka.prototype.shuffle10 = function () {
   var i = 0; var j = 0;
   do {
-    var f = Math.floor(Math.random()*3);
-    var t = Math.floor(Math.random()*3);
+    var f = Math.floor(Math.random()*this.card.length);
+    var t = Math.floor(Math.random()*this.card.length);
     if(this.moveBall(f,t)) i++;
   }while(i<10 && j++<100);
 }
