@@ -16,28 +16,28 @@ button{
   display: none;
 }
 div.p, div.o, div.g, div.e {
-  border-radius: 50%;
   width: 20px;
   height: 20px;
-  border-style: outset;
-  border-width: 1px;
 }
 div.p{
-  background-color: purple;
+  background-image: url(images/p.png);
+  background-size: 100%;
 }
 div.o{
-  background-color: orange;
+  background-image: url(images/o.png);
+  background-size: 100%;
 }
 div.g{
-  background-color: green;
+  background-image: url(images/g.png);
+  background-size: 100%;
 }
 
 div.tube{
   display: inline-block;
   padding: 2px;
   margin: 5px;
-  border: 1px solid white;
-  border-top-color: transparent;
+  background-image: url(images/tube.png);
+  background-size: 100%;
 }
 
 .time{
