@@ -43,3 +43,11 @@ div.tube{
 .time{
   font-size: 3em;
 }
+div.tube {
+  display: inline-block;
+  padding: 9px;
+  margin: 5px;
+  background-image: url(images/tube.png);
+  background-size: cover;
+  background-position: center;
+}
