@@ -11,6 +11,25 @@ html{
     background-position-y: 30%;
   }
 
+@media screen and (orientation: landscape) {
+  html {
+
+  background-size: 100% !important;
+  background-position-y: 20%;
+
+
+  }
+}
+
+@media screen and (max-width: 860px) and (orientation: landscape) {
+  html {
+
+  background-size: 100% !important;
+  background-position-y: 50%;
+  }
+}
+
+
 @media screen and (max-width: 780px) {
   html {
     background-image: url(images/eureka_bg.png);
